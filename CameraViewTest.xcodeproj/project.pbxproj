@@ -78,8 +78,8 @@
 			isa = PBXGroup;
 			children = (
 				55A5F7411A6C9EA200644EAE /* AppDelegate.swift */,
-				55A5F7431A6C9EA200644EAE /* ViewController.swift */,
 				55A5F7451A6C9EA200644EAE /* Main.storyboard */,
+				55A5F7431A6C9EA200644EAE /* ViewController.swift */,
 				55A5F7481A6C9EA200644EAE /* Images.xcassets */,
 				55A5F74A1A6C9EA200644EAE /* LaunchScreen.xib */,
 				55A5F73F1A6C9EA200644EAE /* Supporting Files */,
@@ -407,6 +407,7 @@
 				55A5F75D1A6C9EA200644EAE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		55A5F75E1A6C9EA200644EAE /* Build configuration list for PBXNativeTarget "CameraViewTestTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +416,7 @@
 				55A5F7601A6C9EA200644EAE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

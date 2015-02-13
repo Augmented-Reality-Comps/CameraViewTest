@@ -21,6 +21,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         let url = NSURL(string: "http://cmc307-08.mathcs.carleton.edu/~comps/backend/teapot/indexTest.py")
+        //let url = NSURL(string: "http://www.carleton.edu/")
         //let url = NSURL(string: "http://cmc307-08.mathcs.carleton.edu/~comps/backend/walkAround/webapp.py?latitude=0&longitude=0&altitude=30&pitch=0&yaw=0&roll=0")
         let request = NSURLRequest(URL: url!)
         webView.loadRequest(request)
@@ -59,7 +60,7 @@ class ViewController: UIViewController {
     func configureDevice() {
         if let device = captureDevice {
             device.lockForConfiguration(nil)
-            device.focusMode = .Locked
+            //device.focusMode = .Locked
             device.unlockForConfiguration()
         }
         
@@ -77,8 +78,15 @@ class ViewController: UIViewController {
         }
         
         previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
+        
+        //Make camera view full screen
+        var bounds:CGRect = self.view.layer.bounds
+        previewLayer?.videoGravity = AVLayerVideoGravityResizeAspectFill
+        previewLayer?.bounds = bounds
+        previewLayer?.position = CGPointMake(CGRectGetMidX(bounds), CGRectGetMidY(bounds))
+
+        //Overlay webview onto camera view
         self.view.layer.addSublayer(previewLayer)
-        previewLayer?.frame = self.view.layer.frame
         self.view.bringSubviewToFront(webView)
         captureSession.startRunning()
     }
